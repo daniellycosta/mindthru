@@ -3,36 +3,70 @@ import propTypes from 'prop-types'
 import classnames from 'classnames'
 import { language } from 'language'
 import Typography from '@material-ui/core/Typography'
-import { publicRoutes } from 'App/routes'
-import Button from '@material-ui/core/Button'
+import {userRoutes } from 'App/routes'
 import Drawer from '@material-ui/core/Drawer'
 import {List, ListItem, ListItemText} from '@material-ui/core/'
 import{ListItemIcon} from '@material-ui/core'
-import PeopleIcon from '@material-ui/icons/People'
 
+export class MenuLateralComponent extends Component{
+	constructor(props){
+		super(props)
+		this.state={
+			open: false,
+		}
+	}
 
-export const MenuLateralComponent = (props)=>{
-	const {history, classes,defaultExpanded}= props
+	componentDidMount = () => {
+		const { onRef } = this.props
+    if (onRef) onRef(this)
+	}
 
-	const itens = [{name:"Funcionarios", children:PeopleIcon, linkTo: '/funcionarios'}]
+	componentWillUnmount = () => {
+    const { onRef } = this.props
+    if (onRef) onRef(null)
+  }
+	
+	getRoutes = ()=>{
+		return Object.keys(userRoutes.routes).map(key=>userRoutes.routes[key])
+	}
 
+	handleDrawerOpen=()=>{
+		this.setState({open:true})
+	}
+
+	handleDrawerClose = ()=>{
+		this.setState({open:false})
+	}
+
+	handleMenuClick=(path)=>{
+		const {history}=this.props
+		history.push(path)
+		this.handleDrawerClose()
+	}
+
+	render(){
+	const {classes,defaultExpanded}= this.props
+	const menuRoutes = this.getRoutes()
 	return(
 		<Drawer
 		className={classes.menuLateral} 
-		variant={defaultExpanded? "permanent":"persistent"}
+		variant={defaultExpanded? "permanent":"temporary"}
 		anchor="left"
-		classes={{paper:classes.drawerPaper}}
+		classes={{paper:defaultExpanded?classes.drawerPaper:classes.drawerPaperMobile}}
+		open={this.state.open}
+		onClose={this.handleDrawerClose}
 		>
 			<List>
-				{itens.map(({name,children, linkTo}) => (
-					<ListItem button key={name} onClick={()=>history.push(linkTo)}>
-						<ListItemIcon>{children}</ListItemIcon>
-						<ListItemText primary={name} />
+				{menuRoutes.map((route) => (
+					<ListItem button key={route.path} onClick={()=>this.handleMenuClick(route.path)}>
+						<ListItemIcon>< route.icon /></ListItemIcon>
+						<ListItemText primary={route.name} />
 					</ListItem>
 				))}
 			</List>
 		</Drawer>
 	)
+}
 }
 
 MenuLateralComponent.propTypes = {

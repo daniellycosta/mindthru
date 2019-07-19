@@ -3,4 +3,8 @@ export const style = theme => ({
 		zIndex:1099,
 		top: 64,
 	},
+	drawerPaperMobile:{
+		zIndex:1099,
+		top:0
+	}
 })

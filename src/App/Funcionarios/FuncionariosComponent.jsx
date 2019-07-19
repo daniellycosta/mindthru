@@ -1,23 +1,25 @@
 import React, { Component } from 'react'
 import { propTypes } from './propTypes'
-import Grid from '@material-ui/core/Grid'
-import Paper from '@material-ui/core/Paper'
-import Hidden from '@material-ui/core/Hidden'
 import classnames from 'classnames'
 import { language } from 'language'
-import Typography from '@material-ui/core/Typography'
-import { publicRoutes } from 'App/routes'
+import { userRoutes } from 'App/routes'
+import Fab from '@material-ui/core/Fab';
+import Icon from '@material-ui/core/Icon';
+import AddIcon from '@material-ui/icons/Add';
 import Button from '@material-ui/core/Button'
-import ButtonBase from '@material-ui/core/ButtonBase'
-import {Image} from 'common/Image'
-import LogoAnimusPlus from 'icons/LogoAnimusPlus.png'
+import {Container} from 'common/Container'
+import {PageTitle} from 'common/PageTitle'
 
 export class FuncionariosComponent extends Component {
 	render(){
+		const{classes}=this.props
 		return(
-			<div>
-				funcionarios
-			</div>
+			<Container>
+					<PageTitle title={language.funcionarios.plural}/>
+					<Fab color='secondary' className={classes.addButton}>
+						<AddIcon/>
+					</Fab>
+			</Container>
 		)
 	}
 }

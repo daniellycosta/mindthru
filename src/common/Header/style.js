@@ -5,5 +5,8 @@ export const style = theme => ({
 	},
 	iconButton:{
 		marginLeft:'auto'
+	},
+	menuProfile:{
+		borderRadius:'5px'
 	}
 })

@@ -27,7 +27,8 @@ export class LoginFormComponent extends Component {
 
 	handleSubmit =() => {
 		const { history } = this.props
-		history.push('/home')
+		console.log(language.home.selectedRoute)
+		history.push(language.home.selectedRoute)
 	}
 
 	handleOnChange = variable => event => {
