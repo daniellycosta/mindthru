@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { propTypes } from './propTypes'
 import { language } from 'language'
+import Grid from '@material-ui/core/Grid'	
 import { Container } from 'common/Container'
 import { PageTitle } from 'common/PageTitle'
 import {RadarChart} from 'common/RadarChart'
@@ -38,8 +39,17 @@ export class FuncionarioResultComponent extends Component {
 		const {name,results}=this.state.funcionario
 		return(
 			<Container>
-				<PageTitle title={name}/>
-				<RadarChart/>
+				<PageTitle title={name || ''}/>
+				<Grid container className={classes.container}>
+					<Grid item md={12} lg={6}>
+						<RadarChart data={results}/>
+					</Grid>
+					<Grid item item md={12} lg={6} className={classes.item}>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eleifend ultrices ultricies. Integer et efficitur diam, vel fringilla sapien. Aenean vel pellentesque lorem, finibus interdum risus. Pellentesque eget laoreet enim, ac tincidunt ante. Mauris porttitor pellentesque sodales. Ut purus lorem, tristique sed magna in, rhoncus consequat arcu. Praesent imperdiet placerat tempor.
+
+
+					</Grid>
+				</Grid>
 			</Container>
 		)
 	}
