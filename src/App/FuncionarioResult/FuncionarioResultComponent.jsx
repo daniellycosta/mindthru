@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid'
 import { Container } from 'common/Container'
 import { PageTitle } from 'common/PageTitle'
 import {RadarChart} from 'common/RadarChart'
+import { InfoPanel } from 'common/InfoPanel';
 import{ get } from 'api'
 
 export class FuncionarioResultComponent extends Component {
@@ -36,18 +37,16 @@ export class FuncionarioResultComponent extends Component {
 
 	render(){
 		const {classes}=this.props
-		const {name,results}=this.state.funcionario
+		const {name,results,resultadosTexto}=this.state.funcionario
 		return(
 			<Container>
 				<PageTitle title={name || ''}/>
 				<Grid container className={classes.container}>
-					<Grid item md={12} lg={6}>
+					<Grid item md={12} lg={6} >
 						<RadarChart data={results}/>
 					</Grid>
 					<Grid item item md={12} lg={6} className={classes.item}>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eleifend ultrices ultricies. Integer et efficitur diam, vel fringilla sapien. Aenean vel pellentesque lorem, finibus interdum risus. Pellentesque eget laoreet enim, ac tincidunt ante. Mauris porttitor pellentesque sodales. Ut purus lorem, tristique sed magna in, rhoncus consequat arcu. Praesent imperdiet placerat tempor.
-
-
+						<InfoPanel texts={resultadosTexto}/>
 					</Grid>
 				</Grid>
 			</Container>

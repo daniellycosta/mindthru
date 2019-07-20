@@ -1,8 +1,8 @@
 export const style = theme => ({
-	title:{
-		color: theme.palette.primary.main,
-		marginTop:10,
-		marginBottom:10,
-		textTransform:'capitalize'
-	}
+	'@media only screen and (min-width: 960px)':{
+		grafico:{
+			position:'sticky',
+			top:'150px'
+		},
+	},
 })

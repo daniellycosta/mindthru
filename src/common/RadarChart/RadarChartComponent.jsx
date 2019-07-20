@@ -93,7 +93,7 @@ export class RadarChartComponent extends Component {
 		const {classes} = this.props
 		let series = this.getSeries()
 		return (
-			<div style={{marginTop:10}}>
+			<div className={classes.grafico}>
 				<Chart options={this.getOptions()} series={series} type='radar'/>  
 			</div>
 	)
