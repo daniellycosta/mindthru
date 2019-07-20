@@ -14,5 +14,8 @@ export const style = theme => ({
   },
   name:{
     marginLeft:10
+  },
+  iconButton:{
+    padding:10
   }
 })

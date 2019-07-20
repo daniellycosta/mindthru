@@ -1,4 +1,4 @@
-import React, { Fragment,Component } from 'react'
+import React, { Component } from 'react'
 import propTypes from 'prop-types'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -31,10 +31,10 @@ export class HeaderComponent extends Component {
 		this.props.history.push(language.auth.loginRoute)
 	}
 	render(){
-		const {classes,showMenuIcon,history,openMenu}= this.props
+		const {classes,showMenuIcon,openMenu}= this.props
 		const gutterClass = showMenuIcon? classes.toolbar :''
 		return(
-			<Fragment>
+			<>
 				<AppBar position="fixed">
 					<Toolbar classes={{gutters:gutterClass}}>
 						{showMenuIcon &&
@@ -58,7 +58,7 @@ export class HeaderComponent extends Component {
 					>
 					<MenuItem onClick={this.handleClickSair}>{language.auth.sair}</MenuItem>
 				</Menu>
-			</Fragment>
+			</>
 )}}
 
 HeaderComponent.propTypes = {

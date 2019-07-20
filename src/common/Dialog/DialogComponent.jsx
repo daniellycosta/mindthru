@@ -3,7 +3,6 @@ import propTypes from 'prop-types'
 import {Dialog,DialogActions,DialogContent,DialogTitle} from '@material-ui/core'
 import Button from '@material-ui/core/Button'
 import {language} from 'language'
-import classnames from 'classnames'
 
 export class DialogComponent extends Component {
 	constructor(props){

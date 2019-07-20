@@ -1,13 +1,10 @@
 import React, { Component } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import { propTypes } from './propTypes'
-import { publicRoutes, adminRoutes, userRoutes } from './routes'
+import { publicRoutes, userRoutes } from './routes'
 
 import {Header} from 'common/Header'
 import{ MenuLateral }from 'common/MenuLateral'
-import {Container} from 'common/Container'
-import { language } from 'language';
-
 export class AppComponent extends Component {
 	menuLateralRef
 

@@ -3,12 +3,11 @@ import classnames from 'classnames'
 import propTypes from 'prop-types'
 import DeleteIcon from '@material-ui/icons/Delete'
 import EditIcon from '@material-ui/icons/Edit'
-import {IconButton, Button, Typography} from '@material-ui/core/'
+import {IconButton, Typography} from '@material-ui/core/'
 import TextField from '@material-ui/core/TextField'
-import {Card, CardHeader,Avatar} from '@material-ui/core/'
+import {Card,Avatar} from '@material-ui/core/'
 import { Dialog } from 'common/Dialog'
 import { language } from 'language';
-import { del, patch,get } from 'api'
 
 export class FuncionariosCardComponent extends Component{
 	dialogRef
@@ -54,10 +53,10 @@ export class FuncionariosCardComponent extends Component{
 						<Typography variant='subtitle1' className={classes.name}>{name}</Typography>
 					</div>
 					<div>
-						<IconButton onClick={this.handleOpenDialog}>
+						<IconButton onClick={this.handleOpenDialog} classes={{root:classes.iconButton}}>
 							<EditIcon/>
 						</IconButton>
-						<IconButton onClick={()=>deleteFunc(id)}>
+						<IconButton onClick={()=>deleteFunc(id)} classes={{root:classes.iconButton}}>
 							<DeleteIcon/>
 						</IconButton>
 					</div>
