@@ -6,11 +6,13 @@ import EditIcon from '@material-ui/icons/Edit'
 import {IconButton, Button, Typography} from '@material-ui/core/'
 import TextField from '@material-ui/core/TextField'
 import {Card, CardHeader,Avatar} from '@material-ui/core/'
-import {Dialog,DialogTitle,DialogActions,DialogContent} from '@material-ui/core/'
+import { Dialog } from 'common/Dialog'
 import { language } from 'language';
 import { del, patch,get } from 'api'
 
 export class FuncionariosCardComponent extends Component{
+	dialogRef
+
 	constructor(props){
 		super(props)
 		this.state={
@@ -29,25 +31,20 @@ export class FuncionariosCardComponent extends Component{
 
 	handleChange = name => event => {
     this.setState({ value:{[name]: event.target.value}});
-  }
-
-	handleCloseDialog=()=>{
-		this.setState({openDialog:false})
 	}
-
+	
 	handleOpenDialog=()=>{
-		this.setState({openDialog:true})
+		this.dialogRef.handleOpenDialog()
 	}
 	handleEdit=()=>{
 		const { editFunc,id }=this.props
 		const { value }=this.state
 		editFunc(value,id)
-		this.handleCloseDialog()
 	}
 
 	render(){
-		const {classes,name,id,deleteFunc,editFunc} = this.props
-		const {openDialog,value}= this.state
+		const {classes,name,id,deleteFunc} = this.props
+		const {value}= this.state
 		
 		return (
 			<>
@@ -65,27 +62,20 @@ export class FuncionariosCardComponent extends Component{
 						</IconButton>
 					</div>
 			</Card>
-			<Dialog open={openDialog} onClose={()=>console.log('fechar')}>
-			<DialogTitle className={classes.dialogTitle}>{language.edit}</DialogTitle>
-        <DialogContent>
-          <TextField
-            autoFocus
-						margin="dense"
-						value={value.name}
-            id="name"
-            label={language.name}
-						fullWidth
-						onChange={this.handleChange('name')}
-          />
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={this.handleCloseDialog} color="primary">
-            {language.cancel}
-          </Button>
-          <Button onClick={this.handleEdit} color="primary" variant='contained'>
-            {language.ok}
-          </Button>
-        </DialogActions>
+			<Dialog
+				title={language.edit}
+				onRef={(dialogRef)=>this.dialogRef = dialogRef}
+				handleOk={this.handleEdit}
+			>
+        <TextField
+          autoFocus
+					margin="dense"
+					value={value.name}
+          id="name"
+          label={language.name}
+					fullWidth
+					onChange={this.handleChange('name')}
+        />
 			</Dialog>
 			</>
 		)}
