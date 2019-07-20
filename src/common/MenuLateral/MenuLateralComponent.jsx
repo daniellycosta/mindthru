@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 import propTypes from 'prop-types'
-import classnames from 'classnames'
-import { language } from 'language'
-import Typography from '@material-ui/core/Typography'
 import {userRoutes } from 'App/routes'
 import Drawer from '@material-ui/core/Drawer'
 import {List, ListItem, ListItemText} from '@material-ui/core/'
@@ -27,7 +24,8 @@ export class MenuLateralComponent extends Component{
   }
 	
 	getRoutes = ()=>{
-		return Object.keys(userRoutes.routes).map(key=>userRoutes.routes[key])
+		const routes = Object.keys(userRoutes.routes).map(key=>userRoutes.routes[key])
+		return routes.filter(route=>route.showInMenu)
 	}
 
 	handleDrawerOpen=()=>{
@@ -60,7 +58,7 @@ export class MenuLateralComponent extends Component{
 				{menuRoutes.map((route) => (
 					<ListItem button key={route.path} onClick={()=>this.handleMenuClick(route.path)}>
 						<ListItemIcon>< route.icon /></ListItemIcon>
-						<ListItemText primary={route.name} />
+						<ListItemText primary={route.name} className={classes.itemText} />
 					</ListItem>
 				))}
 			</List>

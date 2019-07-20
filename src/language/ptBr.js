@@ -13,7 +13,7 @@ export const ptBr = {
 	add: 'adicionar',
 	menu: { hide: 'esconder' },
 	home: {
-		singular: 'Início',
+		singular: 'início',
 		selectedRoute: '/inicio',
 		regex: /(^\/inicio)/
 	},
@@ -63,7 +63,7 @@ export const ptBr = {
 	},
 	funcionarios:{
 		selectedRoute:'/funcionarios',
-		singular:'Funcionário',
-		plural:'Funcionários',
+		singular:'funcionário',
+		plural:'funcionários',
 	}
 }

@@ -6,5 +6,8 @@ export const style = theme => ({
 	drawerPaperMobile:{
 		zIndex:1099,
 		top:0
+	},
+	itemText:{
+		textTransform:'capitalize'
 	}
 })

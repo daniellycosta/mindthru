@@ -14,16 +14,22 @@ export const userRoutes = {
 	defaultRedirect: language.home.selectedRoute,
 	routes: {
 		home:{
+			showInMenu:true,
 			name: language.home.singular,
 			path:language.home.selectedRoute,
 			component: Dashboard,
 			icon: DashboardIcon
 		},
 		funcionarios:{
+			showInMenu:true,
 			name: language.funcionarios.plural,
 			path:language.funcionarios.selectedRoute,
 			component:Funcionarios,
 			icon: PeopleIcon	
+		},
+		funcionario:{
+			name: language.funcionarios.singular,
+			path: language.funcionarios.selectedRoute + '/:id',
 		}
 	}
 }

@@ -14,5 +14,5 @@ export const PageTitleComponent = props => {
 }
 
 PageTitleComponent.propTypes = {
-	titulo:propTypes.string.isRequired,
+	title:propTypes.string.isRequired,
 }
