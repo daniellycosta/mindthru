@@ -1,8 +1,9 @@
 import React,{Component} from 'react'
+import classnames from 'classnames'
 import propTypes from 'prop-types'
 import DeleteIcon from '@material-ui/icons/Delete'
 import EditIcon from '@material-ui/icons/Edit'
-import {IconButton, Button} from '@material-ui/core/'
+import {IconButton, Button, Typography} from '@material-ui/core/'
 import TextField from '@material-ui/core/TextField'
 import {Card, CardHeader,Avatar} from '@material-ui/core/'
 import {Dialog,DialogTitle,DialogActions,DialogContent} from '@material-ui/core/'
@@ -14,7 +15,6 @@ export class FuncionariosCardComponent extends Component{
 		super(props)
 		this.state={
 			openDialog:false,
-			funcionarios:[],
 			value:{
 				name:''
 			},
@@ -23,22 +23,8 @@ export class FuncionariosCardComponent extends Component{
 	}
 
 	componentDidMount(){
-		this.getFuncionarios()
-		
-	}
-
-	getFuncionarios=()=>{
-		const funcionarios = get('funcionarios')
-		this.setState({funcionarios})
-	}
-
-	update = () =>{
-		const {value} = this.state
-		const {id} = this.props
-		console.log(value)
-		patch('funcionarios',value,"1")
-		this.getFuncionarios()
-		this.handleCloseDialog()
+		const {onRef} = this.props
+		if(onRef)onRef(this)
 	}
 
 	handleChange = name => event => {
@@ -52,35 +38,33 @@ export class FuncionariosCardComponent extends Component{
 	handleOpenDialog=()=>{
 		this.setState({openDialog:true})
 	}
-
-	deleteCard=()=>{
-		console.log('deletou')
+	handleEdit=()=>{
+		const { editFunc,id }=this.props
+		const { value }=this.state
+		editFunc(value,id)
+		this.handleCloseDialog()
 	}
 
 	render(){
-		const {classes} = this.props
-		const {openDialog,value,funcionarios}= this.state
+		const {classes,name,id,deleteFunc,editFunc} = this.props
+		const {openDialog,value}= this.state
 		
 		return (
 			<>
-			{funcionarios.map(({name,id}) =>
-				<Card className={classes.card} key={id}>
-					<CardHeader 
-					avatar={
-					<Avatar className={classes.avatar}>{name.charAt(0)}</Avatar>
-					}
-					action={
-						<>
-							<IconButton onClick={this.handleOpenDialog}>
-								<EditIcon/>
-							</IconButton>
-							<IconButton onClick={this.deleteCard}>
-								<DeleteIcon/>
-							</IconButton>
-					</>}
-					title={name}
-				/>
-			</Card>)}
+				<Card className={classnames(classes.card,classes.row)} key={id}>
+					<div className={classes.row} onClick={()=>console.log('ver-resultado')}>
+						<Avatar className={classes.avatar}>{name.charAt(0)}</Avatar>
+						<Typography variant='subtitle1' className={classes.name}>{name}</Typography>
+					</div>
+					<div>
+						<IconButton onClick={this.handleOpenDialog}>
+							<EditIcon/>
+						</IconButton>
+						<IconButton onClick={()=>deleteFunc(id)}>
+							<DeleteIcon/>
+						</IconButton>
+					</div>
+			</Card>
 			<Dialog open={openDialog} onClose={()=>console.log('fechar')}>
 			<DialogTitle className={classes.dialogTitle}>{language.edit}</DialogTitle>
         <DialogContent>
@@ -98,7 +82,7 @@ export class FuncionariosCardComponent extends Component{
           <Button onClick={this.handleCloseDialog} color="primary">
             {language.cancel}
           </Button>
-          <Button onClick={this.update} color="primary" variant='contained'>
+          <Button onClick={this.handleEdit} color="primary" variant='contained'>
             {language.ok}
           </Button>
         </DialogActions>
