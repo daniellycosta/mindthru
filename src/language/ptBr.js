@@ -62,8 +62,34 @@ export const ptBr = {
 			'A senha digitada e a confirmação devem ser iguais'
 	},
 	funcionarios:{
-		selectedRoute:'/funcionarios',
+		listRoute:'/funcionarios',
+		selectedRoute:'/funcionario',
 		singular:'funcionário',
 		plural:'funcionários',
+	},
+	grafico:{
+		categorias:{
+			reflexão: 'Reflexão',
+      sentimentalismo:'Sentimentalismo',
+      altruismo:'Autruísmo',
+      autoAceitacao:'Auto-aceitação',
+      autoconfianca:'Autoconfiança',
+      autoDirecionamento:'Autodirecionamento',
+      empatia:'Empatia',
+      espiritualidade:'Espiritualidade',
+      extravagancia:'Extravagância',
+      flexibilidadeObjetivos:'Flexibilidade para objetivos',
+      frater:'Frater',
+      idealismo:'Idealismo',
+      identificacaoPessoal:'Identificação interpessoal',
+      independenciaEmocional:'Independência emocional',
+      inibicao:'Inibição',
+      medoIncerteza:'Medo da incerteza',
+      necessidadeConquista:'Necessidade de conquista',
+      ordem:'Ordem',
+      otimismo:'Otimismo',
+      persistencia:'Persistencia',
+      procrastinacao:'Procrastinação',
+		}
 	}
 }
