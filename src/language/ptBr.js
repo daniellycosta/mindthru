@@ -1,4 +1,5 @@
 export const ptBr = {
+	animus:'AnimusPlus',
 	cancel: 'cancelar',
 	name: 'nome',
 	yes: 'sim',
@@ -38,6 +39,7 @@ export const ptBr = {
 		esqueceuSenha: 'Esqueceu sua senha?',
 		naoCadastrado: 'Não é cadastrado?',
 		entrar: 'entrar',
+		sair:'sair',
 		registrar: 'registrar',
 		erroUserLongo: 'O nome de usuário deve ter no máximo 16 caracteres.',
 		erroUserInvalido:
@@ -58,5 +60,10 @@ export const ptBr = {
 			'Não foi possível requisitar a redefinição, tente novamente mais tarde.',
 		erroConfirmacaoSenhaDiferente:
 			'A senha digitada e a confirmação devem ser iguais'
+	},
+	funcionarios:{
+		selectedRoute:'/funcionarios',
+		singular:'funcionário',
+		plural:'funcionários',
 	}
 }

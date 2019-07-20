@@ -27,7 +27,7 @@ export class LoginFormComponent extends Component {
 
 	handleSubmit =() => {
 		const { history } = this.props
-		history.push('/home')
+		history.push(language.home.selectedRoute)
 	}
 
 	handleOnChange = variable => event => {
@@ -42,7 +42,6 @@ export class LoginFormComponent extends Component {
 	render() {
 		const { classes } = this.props
 		const { email, password, inputErrors } = this.state
-		console.log(this.props.history)
 		return (
 					<div className={classes.margin}>
 						<TextField
