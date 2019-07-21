@@ -67,6 +67,7 @@ export const ptBr = {
 		selectedRoute:'/funcionario',
 		singular:'funcionário',
 		plural:'funcionários',
+		cliqueDimensaoResultado:'Clique na dimensão para visualizar o significado.'
 	},
 	grafico:{
 		categorias:{

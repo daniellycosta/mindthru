@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { propTypes } from './propTypes'
-import Grid from '@material-ui/core/Grid'	
+import Grid from '@material-ui/core/Grid'
+import {Typography} from 	'@material-ui/core'	
 import { Container } from 'common/Container'
 import { PageTitle } from 'common/PageTitle'
 import {RadarChart} from 'common/RadarChart'
 import { InfoPanel } from 'common/InfoPanel';
 import{ get } from 'api'
+import { language } from 'language';
 
 export class FuncionarioResultComponent extends Component {
 
@@ -45,6 +47,7 @@ export class FuncionarioResultComponent extends Component {
 						<RadarChart data={results}/>
 					</Grid>
 					<Grid item md={12} lg={6} className={classes.item}>
+						<Typography variant='body2' className={classes.instr}>{language.funcionarios.cliqueDimensaoResultado}</Typography>
 						<InfoPanel texts={resultadosTexto}/>
 					</Grid>
 				</Grid>

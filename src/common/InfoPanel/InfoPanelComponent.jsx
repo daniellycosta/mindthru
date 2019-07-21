@@ -26,10 +26,10 @@ export const InfoPanelComponent=(props)=>{
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}
         >
-          <Typography className={classes.heading}>{panelsTitle[i]}</Typography>
+          <Typography variant='body1' className={classes.heading}>{panelsTitle[i]}</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography>
+          <Typography variant='body2' className={classes.panelText}>
             {panelText}
           </Typography>
         </ExpansionPanelDetails>
