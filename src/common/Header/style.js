@@ -1,12 +1,12 @@
 export const style = theme => ({
-	toolbar:{
-		paddingLeft:0,
-		paddingRight:0,
+	toolbar: {
+		paddingLeft: 0,
+		paddingRight: 0
 	},
-	iconButton:{
-		marginLeft:'auto'
+	iconButton: {
+		marginLeft: 'auto'
 	},
-	menuProfile:{
-		borderRadius:'5px'
+	menuProfile: {
+		borderRadius: '5px'
 	}
 })

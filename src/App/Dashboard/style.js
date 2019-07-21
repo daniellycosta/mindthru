@@ -3,5 +3,5 @@ export const style = theme => ({
 		backgroundColor: theme.palette.gray.light,
 		minHeight: '100vh',
 		width: '100%'
-	},
+	}
 })

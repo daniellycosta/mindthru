@@ -17,7 +17,7 @@ export const style = theme => ({
 		flexDirection: 'row',
 		justifyContent: 'center',
 		zIndex: 1,
-		marginBottom: 15,
+		marginBottom: 15
 	},
 	formPaper: {
 		zIndex: 1,
