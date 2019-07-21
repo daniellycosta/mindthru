@@ -23,7 +23,6 @@ export class LoginFormComponent extends Component {
 		const errorEmail = email.includes('@') && !!isEmail(email)
 			? ''
 			: language.auth.erroEmailInvalido
-			console.log(errorEmail)
 			this.setState({inputErrors:{
 				email:errorEmail
 			}})
@@ -52,7 +51,6 @@ export class LoginFormComponent extends Component {
 	render() {
 		const { classes } = this.props
 		const { email, password, inputErrors } = this.state
-		console.log(!!inputErrors.email)
 		return (
 					<div className={classes.margin}>
 						<TextField
