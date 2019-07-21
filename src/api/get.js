@@ -1,6 +1,6 @@
 //import axios from 'axios'
-import {mockedDB} from 'utils/mockedDB'
+import { mockedDB } from 'utils/mockedDB'
 
-export const get=(url)=>{
-  return mockedDB[url]
+export const get = url => {
+	return mockedDB[url]
 }

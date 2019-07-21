@@ -14,31 +14,31 @@ import { language } from 'language'
 if (process.env.NODE_ENV === 'production') serviceWorker.register()
 
 ReactDOM.render(
-		<Router history={history}>
-			<MuiThemeProvider theme={theme}>
-				<LastLocationProvider>
-					<SnackbarProvider
-						action={[
-							<Button
-								style={{ color: 'white', borderColor: 'white' }}
-								variant="outlined"
-								size="small"
-							>
-								{language.ok}
-							</Button>
-						]}
-						anchorOrigin={{
-							vertical: 'bottom',
-							horizontal: 'center'
-						}}
-						preventDuplicate
-						dense
-						maxSnack={3}
-					>
-						<App />
-					</SnackbarProvider>
-				</LastLocationProvider>
-			</MuiThemeProvider>
-		</Router>,
+	<Router history={history}>
+		<MuiThemeProvider theme={theme}>
+			<LastLocationProvider>
+				<SnackbarProvider
+					action={[
+						<Button
+							style={{ color: 'white', borderColor: 'white' }}
+							variant="outlined"
+							size="small"
+						>
+							{language.ok}
+						</Button>
+					]}
+					anchorOrigin={{
+						vertical: 'bottom',
+						horizontal: 'center'
+					}}
+					preventDuplicate
+					dense
+					maxSnack={3}
+				>
+					<App />
+				</SnackbarProvider>
+			</LastLocationProvider>
+		</MuiThemeProvider>
+	</Router>,
 	document.getElementById('root')
 )

@@ -1,5 +1,5 @@
 export const ptBr = {
-	animus:'AnimusPlus',
+	animus: 'AnimusPlus',
 	cancel: 'cancelar',
 	name: 'nome',
 	yes: 'sim',
@@ -39,7 +39,7 @@ export const ptBr = {
 		esqueceuSenha: 'Esqueceu sua senha?',
 		naoCadastrado: 'Não é cadastrado?',
 		entrar: 'entrar',
-		sair:'sair',
+		sair: 'sair',
 		registrar: 'registrar',
 		erroUserLongo: 'O nome de usuário deve ter no máximo 16 caracteres.',
 		erroUserInvalido:
@@ -60,39 +60,40 @@ export const ptBr = {
 			'Não foi possível requisitar a redefinição, tente novamente mais tarde.',
 		erroConfirmacaoSenhaDiferente:
 			'A senha digitada e a confirmação devem ser iguais',
-		capsLockActivated: 'Caps Lock está ativada',
+		capsLockActivated: 'Caps Lock está ativada'
 	},
-	funcionarios:{
-		listRoute:'/funcionarios',
-		selectedRoute:'/funcionario',
-		singular:'funcionário',
-		plural:'funcionários',
-		cliqueDimensaoResultado:'Clique na dimensão para visualizar o significado.',
+	funcionarios: {
+		listRoute: '/funcionarios',
+		selectedRoute: '/funcionario',
+		singular: 'funcionário',
+		plural: 'funcionários',
+		cliqueDimensaoResultado:
+			'Clique na dimensão para visualizar o significado.',
 		naoFezTeste: 'O funcionário ainda não respondeu ao teste.'
 	},
-	grafico:{
-		categorias:{
+	grafico: {
+		categorias: {
 			reflexão: 'Reflexão',
-      sentimentalismo:'Sentimentalismo',
-      altruismo:'Autruísmo',
-      autoAceitacao:'Auto-aceitação',
-      autoconfianca:'Autoconfiança',
-      autoDirecionamento:'Autodirecionamento',
-      empatia:'Empatia',
-      espiritualidade:'Espiritualidade',
-      extravagancia:'Extravagância',
-      flexibilidadeObjetivos:'Flexibilidade para objetivos',
-      frater:'Frater',
-      idealismo:'Idealismo',
-      identificacaoPessoal:'Identificação interpessoal',
-      independenciaEmocional:'Independência emocional',
-      inibicao:'Inibição',
-      medoIncerteza:'Medo da incerteza',
-      necessidadeConquista:'Necessidade de conquista',
-      ordem:'Ordem',
-      otimismo:'Otimismo',
-      persistencia:'Persistencia',
-      procrastinacao:'Procrastinação',
+			sentimentalismo: 'Sentimentalismo',
+			altruismo: 'Autruísmo',
+			autoAceitacao: 'Auto-aceitação',
+			autoconfianca: 'Autoconfiança',
+			autoDirecionamento: 'Autodirecionamento',
+			empatia: 'Empatia',
+			espiritualidade: 'Espiritualidade',
+			extravagancia: 'Extravagância',
+			flexibilidadeObjetivos: 'Flexibilidade para objetivos',
+			frater: 'Frater',
+			idealismo: 'Idealismo',
+			identificacaoPessoal: 'Identificação interpessoal',
+			independenciaEmocional: 'Independência emocional',
+			inibicao: 'Inibição',
+			medoIncerteza: 'Medo da incerteza',
+			necessidadeConquista: 'Necessidade de conquista',
+			ordem: 'Ordem',
+			otimismo: 'Otimismo',
+			persistencia: 'Persistencia',
+			procrastinacao: 'Procrastinação'
 		}
 	}
 }

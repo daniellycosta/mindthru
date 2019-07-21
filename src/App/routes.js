@@ -1,7 +1,7 @@
 import { Login } from './Login'
 import { Dashboard } from './Dashboard'
-import { Funcionarios} from './Funcionarios'
-import {FuncionarioResult} from './FuncionarioResult'
+import { Funcionarios } from './Funcionarios'
+import { FuncionarioResult } from './FuncionarioResult'
 import { language } from 'language'
 
 import PeopleIcon from '@material-ui/icons/People'
@@ -14,24 +14,24 @@ export const adminRoutes = {
 export const userRoutes = {
 	defaultRedirect: language.home.selectedRoute,
 	routes: {
-		home:{
-			showInMenu:true,
+		home: {
+			showInMenu: true,
 			name: language.home.singular,
-			path:language.home.selectedRoute,
+			path: language.home.selectedRoute,
 			component: Dashboard,
 			icon: DashboardIcon
 		},
-		funcionarios:{
-			showInMenu:true,
+		funcionarios: {
+			showInMenu: true,
 			name: language.funcionarios.plural,
-			path:language.funcionarios.listRoute,
-			component:Funcionarios,
-			icon: PeopleIcon	
+			path: language.funcionarios.listRoute,
+			component: Funcionarios,
+			icon: PeopleIcon
 		},
-		funcionario:{
+		funcionario: {
 			name: language.funcionarios.singular,
 			path: language.funcionarios.selectedRoute + '/:id',
-			component:FuncionarioResult
+			component: FuncionarioResult
 		}
 	}
 }
@@ -41,6 +41,6 @@ export const publicRoutes = {
 		login: {
 			path: language.auth.loginRoute,
 			component: Login
-		},
+		}
 	}
 }

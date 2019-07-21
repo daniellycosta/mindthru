@@ -1,5 +1,5 @@
 export const style = theme => ({
-	dialogTitle:{
-    textTransform:'capitalize'
-  },
+	dialogTitle: {
+		textTransform: 'capitalize'
+	}
 })

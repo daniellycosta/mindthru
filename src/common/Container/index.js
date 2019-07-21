@@ -6,5 +6,5 @@ import { style } from './style'
 
 export const Container = compose(
 	withStyles(style),
-	withRouter,	
+	withRouter
 )(ContainerComponent)
