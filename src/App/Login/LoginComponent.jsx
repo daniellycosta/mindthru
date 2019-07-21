@@ -33,7 +33,7 @@ export const LoginComponent = ({ classes, history }) => (
 						>
 							<ButtonBase
 								onClick={() =>
-									history.push(publicRoutes.routes.forgotPassword.path)
+									history.push("/")
 								}
 								disableRipple
 								className={classes.passwordRecovery}
@@ -42,7 +42,7 @@ export const LoginComponent = ({ classes, history }) => (
 							</ButtonBase>
 						</div>
 						<Button
-							onClick={() => history.push(publicRoutes.routes.register.path)}
+							onClick={() => history.push("/")}
 							className={classes.secundaryButton}
 							fullWidth
 						>
