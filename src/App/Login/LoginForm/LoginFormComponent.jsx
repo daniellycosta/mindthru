@@ -18,16 +18,26 @@ export class LoginFormComponent extends Component {
 		}
 	}
 
-	validateInputEmail = value => {
-		console.log(value.includes('@') && !isEmail(value))
-		return value.includes('@') && !isEmail(value)
-			? language.auth.erroEmailInvalido
-			: ''
+	validateInputEmail = () => {
+		const {email} = this.state
+		const errorEmail = email.includes('@') && !!isEmail(email)
+			? ''
+			: language.auth.erroEmailInvalido
+			console.log(errorEmail)
+			this.setState({inputErrors:{
+				email:errorEmail
+			}})
 	}
 
-	handleSubmit =() => {
+	handleSubmit =() =>(event)=>{
 		const { history } = this.props
-		history.push(language.home.selectedRoute)
+		this.validateInputEmail()
+
+		if (!Object.values(this.state.inputErrors).some(item => item)) {
+			history.push(language.home.selectedRoute)
+		}
+
+		event.preventDefault()
 	}
 
 	handleOnChange = variable => event => {
@@ -42,11 +52,13 @@ export class LoginFormComponent extends Component {
 	render() {
 		const { classes } = this.props
 		const { email, password, inputErrors } = this.state
+		console.log(!!inputErrors.email)
 		return (
 					<div className={classes.margin}>
 						<TextField
 							required
 							autoFocus
+							autoComplete="true"
 							name="email"
 							className={classes.margin}
 							variant="outlined"
@@ -61,7 +73,8 @@ export class LoginFormComponent extends Component {
 							buttonString={language.auth.showPassword}
 							required
 							className={classes.margin}
-							name="current-password"
+							name="password"
+							autoComplete="true"	
 							variant="outlined"
 							fullWidth
 							label={language.auth.password}
@@ -75,7 +88,7 @@ export class LoginFormComponent extends Component {
 							color='primary'
 							variant='contained'
 							fullWidth
-							onClick={()=>this.handleSubmit()}
+							onClick={this.handleSubmit()}
 						>
 							{language.auth.entrar}
 						</LoadingButton>

@@ -1,15 +1,10 @@
 import React, {Component} from 'react'
 import propTypes from 'prop-types'
-import {Typography,Divider} from '@material-ui/core'
 import Chart from "react-apexcharts";
 import { language } from 'language';
 import {theme} from 'utils/theme'
 
 export class RadarChartComponent extends Component {
-
-	constructor(props){
-		super(props)
-	}
 
 	getSeries=()=>{
 		const {data} = this.props
@@ -101,5 +96,5 @@ export class RadarChartComponent extends Component {
 }
 
 RadarChartComponent.propTypes = {
-	data:propTypes.object.isRequired,
+	data:propTypes.object,
 }

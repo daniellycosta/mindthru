@@ -1,6 +1,5 @@
 import React from 'react'
 import propTypes from 'prop-types'
-import classnames from 'classnames'
 import {language} from 'language'
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
@@ -39,5 +38,10 @@ export const InfoPanelComponent=(props)=>{
 			}
     </div>
   )
+}
+
+InfoPanelComponent.propTypes={
+  classes: propTypes.object.isRequired,
+  texts: propTypes.object
 }
 

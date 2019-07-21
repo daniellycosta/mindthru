@@ -66,8 +66,8 @@ export class PasswordFieldComponent extends React.Component {
 				/>
 				{capsLockOn && (
 					<Typography color="error">
-						{language.auth.capsLockActivated}
-					</Typography>
+					{language.auth.capsLockActivated}
+				</Typography>
 				)}
 			</>
 		)

@@ -59,7 +59,8 @@ export const ptBr = {
 		erroAoSubmeterRedefinicao:
 			'Não foi possível requisitar a redefinição, tente novamente mais tarde.',
 		erroConfirmacaoSenhaDiferente:
-			'A senha digitada e a confirmação devem ser iguais'
+			'A senha digitada e a confirmação devem ser iguais',
+		capsLockActivated: 'Caps Lock está ativada',
 	},
 	funcionarios:{
 		listRoute:'/funcionarios',
