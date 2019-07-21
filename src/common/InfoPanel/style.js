@@ -6,4 +6,7 @@ export const style = theme => ({
     flexBasis: '50%',
     flexShrink: 0,
   },
+  panelText:{
+    textAlign:'justify'
+  }
 })

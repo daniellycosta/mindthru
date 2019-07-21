@@ -34,6 +34,8 @@ export class FuncionariosCardComponent extends Component{
 	}
 	
 	handleOpenDialog=(event)=>{
+		const {name} = this.props
+		this.setState({value:{name}})
 		if(event.stopPropagation) event.stopPropagation()
 		this.dialogRef.handleOpenDialog()
 	}

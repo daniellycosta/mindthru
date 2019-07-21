@@ -7,4 +7,8 @@ export const style = theme => ({
 	item:{
 		marginTop:30
 	},
+	instr:{
+		textAlign:'center',
+		marginBottom:10
+	}
 })
