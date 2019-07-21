@@ -67,7 +67,8 @@ export const ptBr = {
 		selectedRoute:'/funcionario',
 		singular:'funcionário',
 		plural:'funcionários',
-		cliqueDimensaoResultado:'Clique na dimensão para visualizar o significado.'
+		cliqueDimensaoResultado:'Clique na dimensão para visualizar o significado.',
+		naoFezTeste: 'O funcionário ainda não respondeu ao teste.'
 	},
 	grafico:{
 		categorias:{
