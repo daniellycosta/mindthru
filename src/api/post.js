@@ -2,7 +2,9 @@
 import {mockedDB} from 'utils/mockedDB'
 
 export const post=(url,data)=>{
-  data.id = mockedDB[url].length + 1 + data.name
+  let random = Math.floor(Math.random() * (9999 - 0)) + 0
+  const id = mockedDB[url].length + 1 + random
+  data.id = id.toString()
   data.results={}
   data.resultadosTexto = mockedDB.resultadosTextoDefault
   mockedDB[url].push(data)
