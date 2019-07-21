@@ -8,6 +8,7 @@ import TextField from '@material-ui/core/TextField'
 import {Card,Avatar} from '@material-ui/core/'
 import { Dialog } from 'common/Dialog'
 import { language } from 'language';
+import {history} from 'utils/history'
 
 export class FuncionariosCardComponent extends Component{
 	dialogRef
@@ -32,23 +33,36 @@ export class FuncionariosCardComponent extends Component{
     this.setState({ value:{[name]: event.target.value}});
 	}
 	
-	handleOpenDialog=()=>{
+	handleOpenDialog=(event)=>{
+		if(event.stopPropagation) event.stopPropagation()
 		this.dialogRef.handleOpenDialog()
 	}
+
 	handleEdit=()=>{
 		const { editFunc,id }=this.props
 		const { value }=this.state
 		editFunc(value,id)
 	}
 
+	handleDelete=(event)=>{
+		const {id, deleteFunc} = this.props
+		if(event.stopPropagation) event.stopPropagation()
+		deleteFunc(id)
+
+	}
+	goToResult=()=>{
+		const {id} = this.props
+		history.push(language.funcionarios.selectedRoute+`/${id}`)
+	}
+
 	render(){
-		const {classes,name,id,deleteFunc} = this.props
+		const {classes,name,id} = this.props
 		const {value}= this.state
 		
 		return (
 			<>
-				<Card className={classnames(classes.card,classes.row)} key={id}>
-					<div className={classes.row} onClick={()=>console.log('ver-resultado')}>
+				<Card className={classnames(classes.card,classes.row)} key={id} onClick={()=>this.goToResult()}>
+					<div className={classes.row} >
 						<Avatar className={classes.avatar}>{name.charAt(0)}</Avatar>
 						<Typography variant='subtitle1' className={classes.name}>{name}</Typography>
 					</div>
@@ -56,7 +70,7 @@ export class FuncionariosCardComponent extends Component{
 						<IconButton onClick={this.handleOpenDialog} classes={{root:classes.iconButton}}>
 							<EditIcon/>
 						</IconButton>
-						<IconButton onClick={()=>deleteFunc(id)} classes={{root:classes.iconButton}}>
+						<IconButton onClick={this.handleDelete} classes={{root:classes.iconButton}}>
 							<DeleteIcon/>
 						</IconButton>
 					</div>

@@ -1,8 +1,4 @@
 export const style = theme => ({
-	paper: {
-		borderRadius:0,
-		height:200
-	},
 	addButton:{
 		color:theme.palette.primary.contrastText,
 		position: 'fixed',

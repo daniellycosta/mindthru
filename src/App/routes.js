@@ -1,6 +1,7 @@
 import { Login } from './Login'
 import { Dashboard } from './Dashboard'
 import { Funcionarios} from './Funcionarios'
+import {FuncionarioResult} from './FuncionarioResult'
 import { language } from 'language'
 
 import PeopleIcon from '@material-ui/icons/People'
@@ -23,13 +24,14 @@ export const userRoutes = {
 		funcionarios:{
 			showInMenu:true,
 			name: language.funcionarios.plural,
-			path:language.funcionarios.selectedRoute,
+			path:language.funcionarios.listRoute,
 			component:Funcionarios,
 			icon: PeopleIcon	
 		},
 		funcionario:{
 			name: language.funcionarios.singular,
 			path: language.funcionarios.selectedRoute + '/:id',
+			component:FuncionarioResult
 		}
 	}
 }
